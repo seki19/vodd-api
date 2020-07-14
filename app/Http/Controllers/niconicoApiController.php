@@ -62,7 +62,11 @@ class niconicoApiController extends Controller
             // ランダムに動画を取得
             $request = $client->get($baseUrl . $searchCriteria . $this->getURLOptions($offset, $limit));
             $response = json_decode($request->getBody(), true);
-            return $response;
+            $result = array();
+            foreach (array_rand($response['data'], 4) as $shuffleKey) {
+                array_push($result, $response['data'][$shuffleKey]);
+            }
+            return response()->json($result, 200);
         } catch (Exception $exception) {
             Log::error($exception);
             return response()->json('', 400);
