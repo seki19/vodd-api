@@ -21,8 +21,8 @@
           <file leaf-file-name="niconicoApiController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/niconicoApiController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="233">
-                  <caret line="27" column="278" lean-forward="false" selection-start-line="27" selection-start-column="278" selection-end-line="27" selection-end-column="278" />
+                <state relative-caret-position="283">
+                  <caret line="27" column="286" lean-forward="false" selection-start-line="27" selection-start-column="286" selection-end-line="27" selection-end-column="286" />
                   <folding>
                     <element signature="e#40#54#0#PHP" expanded="true" />
                   </folding>
@@ -324,12 +324,12 @@
       <option name="presentableId" value="Default" />
       <updated>1594722843291</updated>
       <workItem from="1594722844375" duration="12144000" />
-      <workItem from="1594906655865" duration="929000" />
+      <workItem from="1594906655865" duration="1003000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13073000" />
+    <option name="totallyTimeSpent" value="13147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -490,8 +490,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/niconicoApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="27" column="278" lean-forward="false" selection-start-line="27" selection-start-column="278" selection-end-line="27" selection-end-column="278" />
+        <state relative-caret-position="283">
+          <caret line="27" column="286" lean-forward="false" selection-start-line="27" selection-start-column="286" selection-end-line="27" selection-end-column="286" />
           <folding>
             <element signature="e#40#54#0#PHP" expanded="true" />
           </folding>
