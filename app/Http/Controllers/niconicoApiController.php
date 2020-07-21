@@ -22,6 +22,7 @@ class niconicoApiController extends Controller
             $genre = '';
             $offset = 0;
             $limit = 0;
+            $viewCounter = $request->has('viewCounter') ? $request->viewCounter : 1000;
             // 使用するニコニコ動画API
             $baseUrl = 'http://api.search.nicovideo.jp/api/v2/video/contents/search?q=';
             // 検索から排除する条件
@@ -49,7 +50,7 @@ class niconicoApiController extends Controller
             $searchCriteria = urlencode($vocal . $genre) . $eliminationCriteria;
             // 検索結果の動画数を取得
             $client = new Client();
-            $request = $client->get($baseUrl . $searchCriteria . $this->getURLOptions($offset, $limit));
+            $request = $client->get($baseUrl . $searchCriteria . $this->getURLOptions($offset, $limit, $viewCounter));
             $response = json_decode($request->getBody(), true);
             $videoCountRange = (int) $response['meta']['totalCount'];
             if (1600 < $videoCountRange) {
@@ -60,7 +61,7 @@ class niconicoApiController extends Controller
             $offset = mt_rand(0, ($maxRange));
             $limit = ($videoCountRange > 100) ? 100 : $videoCountRange;
             // ランダムに動画を取得
-            $request = $client->get($baseUrl . $searchCriteria . $this->getURLOptions($offset, $limit));
+            $request = $client->get($baseUrl . $searchCriteria . $this->getURLOptions($offset, $limit, $viewCounter));
             $response = json_decode($request->getBody(), true);
             $result = array();
             foreach (array_rand($response['data'], 4) as $shuffleKey) {
@@ -80,7 +81,7 @@ class niconicoApiController extends Controller
      * @param $limit
      * @return string
      */
-    private function getURLOptions($offset, $limit) {
-        return '&targets=tagsExact&fields=contentId,title,viewCounter,startTime&filters[viewCounter][gte]=10000&filters[categoryTags][0]=VOCALOID&_sort=%2bviewCounter&_offset=' . $offset . '&_limit='  . $limit . '&_context=apiguide';
+    private function getURLOptions($offset, $limit, $viewCounter) {
+        return '&targets=tagsExact&fields=contentId,title,viewCounter,startTime&filters[viewCounter][gte]=' . $viewCounter . '&filters[categoryTags][0]=VOCALOID&_sort=%2bviewCounter&_offset=' . $offset . '&_limit='  . $limit . '&_context=apiguide';
     }
 }
