@@ -26,7 +26,7 @@ class niconicoApiController extends Controller
             // 使用するニコニコ動画API
             $baseUrl = 'http://api.search.nicovideo.jp/api/v2/video/contents/search?q=';
             // 検索から排除する条件
-            $eliminationCriteria = urlencode(' -StepMania -歌ってみた -演奏して見た -演奏してみた -PVつけてみた -初音ミク-ProjectDIVA- -遊戯王 -喋らせてみた -ボカロカラオケDB -MMD -MMD杯 -mikumikudance -クロスフェード -日刊VOCALOIDランキング -VOCALOIDランキング -作業用BGM -クロスフェードデモ -ボカロラオケDB -VOCALOIDにインタビューシリーズ -VOCALOIDカバー曲 -VOCALOIDアレンジ曲 -MMD-PV -VOCALOID-CDデモ -DIVAエディット動画');
+            $eliminationCriteria = urlencode(' -StepMania -歌ってみた -演奏して見た -演奏してみた -PVつけてみた -初音ミク-ProjectDIVA- -遊戯王 -喋らせてみた -ボカロカラオケDB -MMD -MMD杯 -mikumikudance -クロスフェード -日刊VOCALOIDランキング -VOCALOIDランキング -作業用BGM -クロスフェードデモ -ボカロラオケDB -VOCALOIDにインタビューシリーズ -VOCALOIDカバー曲 -VOCALOIDアレンジ曲 -MMD-PV -VOCALOID-CDデモ -DIVAエディット動画 -替え歌');
             // 選択されたVOCALとジャンルを整形
             if ($request->has('vocal')) {
                 foreach ($request->vocal as $key => $value) {
