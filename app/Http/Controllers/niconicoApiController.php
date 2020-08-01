@@ -72,7 +72,6 @@ class niconicoApiController extends Controller
             Log::error($exception);
             return response()->json('', 400);
         }
-
     }
 
     /**
@@ -82,6 +81,6 @@ class niconicoApiController extends Controller
      * @return string
      */
     private function getURLOptions($offset, $limit, $viewCounter) {
-        return '&targets=tagsExact&fields=contentId,title,viewCounter,startTime&filters[viewCounter][gte]=' . $viewCounter . '&filters[categoryTags][0]=VOCALOID&_sort=%2bviewCounter&_offset=' . $offset . '&_limit='  . $limit . '&_context=apiguide';
+        return '&targets=tagsExact&fields=contentId,title,viewCounter,startTime,thumbnailUrl,lengthSeconds&filters[viewCounter][gte]=' . $viewCounter . '&filters[categoryTags][0]=VOCALOID&_sort=%2bviewCounter&_offset=' . $offset . '&_limit='  . $limit . '&_context=apiguide';
     }
 }
