@@ -24,7 +24,8 @@ class niconicoApiController extends Controller
             $limit = 0;
             $viewCounter = $request->has('viewCounter') ? $request->viewCounter : 1000;
             // 使用するニコニコ動画API
-            $baseUrl = 'http://api.search.nicovideo.jp/api/v2/video/contents/search?q=';
+//            $baseUrl = 'http://api.search.nicovideo.jp/api/v2/video/contents/search?q=';
+            $baseUrl = 'https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search?q=';
             // 検索から排除する条件
             $eliminationCriteria = urlencode(' -StepMania -歌ってみた -演奏して見た -演奏してみた -PVつけてみた -初音ミク-ProjectDIVA- -遊戯王 -喋らせてみた -ボカロカラオケDB -MMD -MMD杯 -mikumikudance -クロスフェード -日刊VOCALOIDランキング -VOCALOIDランキング -作業用BGM -クロスフェードデモ -ボカロラオケDB -VOCALOIDにインタビューシリーズ -VOCALOIDカバー曲 -VOCALOIDアレンジ曲 -MMD-PV -VOCALOID-CDデモ -DIVAエディット動画 -替え歌 -VOCALOID→VOCALOIDカバー');
             // 選択されたVOCALとジャンルを整形
